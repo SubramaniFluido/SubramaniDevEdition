@@ -1,0 +1,31 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="car" type="Car__c" access= "public" />
+    <aura:attribute name="simpleNewExp" type="Car_Experience__c" access= "public" />
+    <aura:attribute name="newExpError" type="String" access= "public" />
+    <force:recordData aura:id="expRecordCreator"
+                      fields="Name, Experience__c, Car__c, Id"
+                      targetFields ="{!v.simpleNewExp}"
+                      targetError="{!v.newExpError}"
+                      mode="EDIT"
+                      recordUpdated= "{!c.recordUpdated}"
+                      />
+    <aura:registerEvent name= "carExpAddedEvent" type= "c:carExperienceEvent" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!-- Display the new contact form -->
+    <lightning:card iconName="action:new_contact" title="Add Experience">
+        <div class="slds-p-horizontal--small">
+            <lightning:input aura:id="expField" label="Title" value="{!v.simpleNewExp.Name}"/>
+            <br/>
+            <label> Description </label>
+            <lightning:inputRichText aura:id="expField" value="{!v.simpleNewExp.Experience__c}"/>
+            <br/>
+            <lightning:button label="Save Experience" variant="brand" onclick="{!c.handleSaveExp}"/>
+        </div>
+    </lightning:card>
+    <!-- Display Lightning Data Service errors -->
+    <aura:if isTrue="{!not(empty(v.newExpError))}">
+        <div class="recordError">
+            {!v.newExpError}
+        </div>
+    </aura:if>
+</aura:component>

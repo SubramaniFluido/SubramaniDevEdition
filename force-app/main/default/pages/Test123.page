@@ -1,0 +1,10 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  <br> </br>
+  Welcome to visual salesforce
+ <br> </br>
+  Ivy Mobility Solution
+  <br> </br>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

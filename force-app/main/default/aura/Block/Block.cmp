@@ -1,0 +1,17 @@
+<aura:component>
+    <aura:attribute name="word" type="String" />
+    <aura:attribute name="open" type="Boolean" default="false" />
+    <aura:registerEvent name="onClickEvent" type="c:BlockClickEvent"/>
+    <ltng:require
+        scripts="{!$Resource.fitText}"
+        afterScriptsLoaded="{!c.scriptsLoaded}" />
+
+    <div>
+        <div class="board-block slds-align_absolute-center slds-var-p-around_medium win-word" onclick="{!c.revealWord}">
+            <aura:if isTrue="{!v.open}">
+                {!v.word}
+            </aura:if>
+            
+        </div>
+    </div>
+</aura:component>

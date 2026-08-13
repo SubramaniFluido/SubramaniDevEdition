@@ -1,0 +1,24 @@
+<aura:component controller= "CampingListController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name= "items" type= "Camping_Item__c[]" />
+	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:handler name="addItem" event="c:addItemEvent" action="{!c.handleAddItem}"/>
+    
+    <lightning:layout>
+        
+        <lightning:layoutItem padding="around-large" size="12">
+            <c:campingListForm />
+        </lightning:layoutItem>
+        
+    </lightning:layout>
+    
+    <lightning:card title="Camping">
+        <p class="slds-p-horizontal--small">
+            <aura:iteration items="{!v.items}" var="itm">
+                <c:campingListItem item="{!itm}"/>
+            </aura:iteration>
+        </p>
+    </lightning:card>
+
+</aura:component>

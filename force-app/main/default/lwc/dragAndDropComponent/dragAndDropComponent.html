@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 02-17-2025
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="Drag and Drop">
+        <div data-list="listOne" ondrop ={handleDrop} ondragover={handleDragOver}>
+            <template for:each={listOne} for:item="item">
+                <div key={item} data-item={item} draggable="true" ondragstart={handleDragStart}>
+                    {item}
+                </div>
+            </template>
+        </div>
+
+        <div data-list="listTwo" ondrop ={handleDrop} ondragover={handleDragOver}>
+            <template for:each={listTwo} for:item="item">
+                <div key={item} data-item={item} draggable="true" ondragstart={handleDragStart}>
+                    {item}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

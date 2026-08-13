@@ -1,0 +1,15 @@
+<apex:page >
+<apex:pageblock title="User Info">
+    <apex:pageblockSection title="Details">
+    
+    {!$User.FirstName} <br> </br>
+    {!$User.FirstName} <br> </br>
+    {!$User.FirstName} <br> </br>
+    {!$User.FirstName} <br> </br>
+    {!$User.FirstName} <br> </br>
+    {!$User.FirstName} <br> </br>
+    
+    
+    </apex:pageblockSection>
+</apex:pageblock>
+</apex:page>

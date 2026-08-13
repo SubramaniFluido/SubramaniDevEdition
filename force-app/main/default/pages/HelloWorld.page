@@ -1,0 +1,17 @@
+<apex:page sidebar="true" showHeader="true" standardStylesheets="true" standardController="Account">
+         
+    <h1>
+        Welcome to salesforce Dude
+    </h1>
+    <apex:pageBlock title="A Block Title">
+    <apex:pageBlockSection title="A Section Title">
+        I am inside. Find me if you can
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Another section">
+        I am inside. Another section
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+   
+    
+</apex:page>

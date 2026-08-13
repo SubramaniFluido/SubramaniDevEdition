@@ -1,0 +1,29 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="myText" type="string" default="Hello there!"/>
+    <aura:attribute name="parentValue" type="string" default="I am defined at cmp level"/>
+    
+    <aura:method name="childMethod" action="{!c.callChildMethod}" access="public">
+        <aura:attribute name="parameter1" type="String" default="I am from Child"/> 
+    </aura:method>
+    
+    <aura:registerEvent name="sampleComponentEvent" type="c:compEvent"/>
+    
+    
+    <lightning:card title="Child Component">
+        <lightning:layout >
+            <lightning:layoutItem padding="around-medium" size="3">
+                <lightning:input type="text" name="input1" label="Enter Text in Child Cmp" value="{!v.myText}" />	
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout>
+            <lightning:layoutItem padding="around-medium">
+                <lightning:button variant="brand" label="Pass Value to Parent" title="Submit Button" onclick="{! c.handleClick }" />	
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout title="Pass Value from Parent">
+            <lightning:layoutItem padding="around-medium">
+            You entered: <ui:outputText value="{!v.parentValue}"/>	
+           </lightning:layoutItem>
+        </lightning:layout>
+    </lightning:card>
+</aura:component>

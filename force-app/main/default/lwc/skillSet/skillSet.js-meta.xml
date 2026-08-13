@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <!-- Skill -->
+            <property name="SkillName01" type="String" label="Skill 1" description="Your Skill ?" default="LWC" />
+            <property name="SkillValue01" type="String" label="Skill Value 1" description="Rate your skill out of 100 ?" default="90" />
+
+            <property name="SkillName02" type="String" label="Skill 2" description="Your Skill ?" default="LWC" />
+            <property name="SkillValue02" type="String" label="Skill Value 1" description="Rate your skill out of 100 ?" default="90" />
+
+            <property name="SkillName03" type="String" label="Skill 3" description="Your Skill ?" default="LWC" />
+            <property name="SkillValue03" type="String" label="Skill Value 1" description="Rate your skill out of 100 ?" default="90" />
+
+            <property name="SkillName04" type="String" label="Skill 4" description="Your Skill ?" default="LWC" />
+            <property name="SkillValue04" type="String" label="Skill Value 1" description="Rate your skill out of 100 ?" default="90" />
+
+            <property name="SkillName05" type="String" label="Skill 5" description="Your Skill ?" default="LWC" />
+            <property name="SkillValue05" type="String" label="Skill Value 1" description="Rate your skill out of 100 ?" default="90" />
+
+            <property name="SkillName06" type="String" label="Skill 6" description="Your Skill ?" default="LWC" />
+            <property name="SkillValue06" type="String" label="Skill Value 1" description="Rate your skill out of 100 ?" default="90" />
+
+            <property name="SkillName07" type="String" label="Skill 7" description="Your Skill ?" default="LWC" />
+            <property name="SkillValue07" type="String" label="Skill Value 1" description="Rate your skill out of 100 ?" default="90" />
+
+            <!-- Focused Skill-->
+
+            <property name="FocusSkill01" type="String" label="Focus Skill 1" description="Focus Skill ?" default="LWC" />
+            <property name="FocusSkillValue01" type="String" label="Focus Skill Value 1" description="How much you learned out of 100 ?" default="90" />
+
+            <property name="FocusSkill02" type="String" label="Focus Skill 2" description="Focus Skill ?" default="LWC" />
+            <property name="FocusSkillValue02" type="String" label="Focus Skill Value 2" description="How much you learned out of 100 ?" default="90" />
+
+            <property name="FocusSkill03" type="String" label="Focus Skill 3" description="Focus Skill ?" default="LWC" />
+            <property name="FocusSkillValue03" type="String" label="Focus Skill Value 3" description="How much you learned out of 100 ?" default="90" />
+
+            <property name="FocusSkill04" type="String" label="Focus Skill 4" description="Focus Skill ?" default="LWC" />
+            <property name="FocusSkillValue04" type="String" label="Focus Skill Value 4" description="How much you learned out of 100 ?" default="90" />
+
+            <property name="FocusSkill05" type="String" label="Focus Skill 5" description="Focus Skill ?" default="LWC" />
+            <property name="FocusSkillValue05" type="String" label="Focus Skill Value 5" description="How much you learned out of 100 ?" default="90" />
+
+            <property name="FocusSkill06" type="String" label="Focus Skill 6" description="Focus Skill ?" default="LWC" />
+            <property name="FocusSkillValue06" type="String" label="Focus Skill Value 6" description="How much you learned out of 100 ?" default="90" />
+
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

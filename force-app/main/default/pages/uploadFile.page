@@ -1,0 +1,6 @@
+<apex:page sidebar="false" controller="uploadFileController">
+	<apex:form >
+	<apex:inputfile value="{!textBody}"/>
+	<apex:commandButton value="Read Text File" action="{!readContent}"/>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page standardController="Contact">
+    
+   <h1>
+       Contact
+    </h1>
+    <apex:pageBlock title="Header 1">
+    <apex:pageBlockSection title="This is the page block section"> I am here haah </apex:pageBlockSection>
+        
+        </apex:pageBlock>
+    <apex:pageBlock title="Header 2">
+        <apex:pageBlockSection title="This is another "> 
+            <apex:outputField value="{! Contact.Name}"></apex:outputField>
+             </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+</apex:page>

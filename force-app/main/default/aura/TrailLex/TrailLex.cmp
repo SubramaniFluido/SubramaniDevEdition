@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<span class="slds-avatar">
+		<abbr class="slds-avatar__initials slds-icon-standard-account" title="Company name">RK</abbr>
+	</span>
+
+</aura:component>

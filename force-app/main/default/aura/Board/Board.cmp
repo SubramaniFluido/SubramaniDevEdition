@@ -1,0 +1,45 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="words" type="List" access="private" />
+    <aura:attribute name="winWord" type="String" access="private" />
+    <aura:attribute name="clickCount" type="Integer" default="0" access="private" />
+    <aura:attribute name="gameMode" type="String" default="easy" access="public"/>
+    <aura:attribute name="columSize" type="Integer" />
+    <aura:attribute name="result" type="String" />
+    <aura:attribute name="disableClick" type="Boolean" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="onClickEvent" event="c:BlockClickEvent"
+    action="{!c.handleBlockClickEvent}"/>
+
+    <aura:registerEvent name="appEvent" type="c:ResultApplicationEvent"/>
+
+    <aura:method name="StartGame" action="{!c.doInit}"
+    access="public">
+    </aura:method>
+
+    <div class="board">
+        <lightning:layout>
+            <lightning:layoutItem padding="around-small">
+                <div class="slds-text-heading_medium">WORD : <span class="win-word">{!v.winWord}</span></div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="slds-text-heading_medium"> {!v.result} </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="slds-text-heading_medium">Moves Left : {! (3 - v.clickCount)}</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+
+        <aura:if isTrue="{!v.disableClick}">
+            <div class="board-disabled"/>
+        </aura:if>
+
+        <lightning:layout multipleRows="true">
+            <aura:iteration items="{!v.words}" var="word">
+                <lightning:layoutItem size="{!v.columSize}" padding="around-small">
+                    <c:Block word="{!word}"/>
+                </lightning:layoutItem>
+            </aura:iteration>
+        </lightning:layout>
+    </div>
+</aura:component>

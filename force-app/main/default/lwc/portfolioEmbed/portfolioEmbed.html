@@ -1,0 +1,35 @@
+<!--
+  @description       : Portfolio component with fixed header overlap fix
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 06-09-2025
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+  <div class="outer-container slds-var-p-top_medium">
+    <lightning-layout multiple-rows="true">
+      <!-- Left Column -->
+      <lightning-layout-item size="12" medium-device-size="6" large-device-size="6" padding="around-small">
+        <template lwc:if={portfolioData}>
+          <div class="hero_left">
+            <h1><strong>{portfolioData.name}</strong></h1>
+            <p>{portfolioData.description}</p>
+            <h1 class="response"><strong>Key areas of expertise include:</strong></h1>
+            <template for:each={portfolioData.expertise} for:item="expertise">
+              <ul class="response_text" key={expertise}>
+                <li>{expertise}</li>
+              </ul>
+            </template>
+          </div>
+        </template>
+      </lightning-layout-item>
+
+      <!-- Right Column (Image) -->
+      <lightning-layout-item size="12" medium-device-size="6" large-device-size="6" padding="around-small">
+        <div class="hero_right">
+          <img src={personImage} alt="person" class="responsive-img" />
+        </div>
+      </lightning-layout-item>
+    </lightning-layout>
+  </div>
+</template>

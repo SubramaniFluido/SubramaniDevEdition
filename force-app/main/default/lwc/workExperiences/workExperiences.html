@@ -1,0 +1,57 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 06-09-2025
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    
+    <lightning-layout multiple-rows>
+    
+        <lightning-layout-item padding="around-small" size="12" large-device-size="6" medium-device-size="6">
+
+            <div class="slds-var-p-around_medium">
+
+                <h1 class="header">Work Experiences</h1>
+                <p class=" para_text slds-var-p-top_medium">Led end-to-end Salesforce implementations across multiple clouds, delivering scalable and efficient solutions aligned with business goals. Designed and governed technical architecture, ensuring security, performance, and maintainability. Collaborated with cross-functional teams, managed stakeholder expectations, and provided technical leadership. Guided developers through code reviews, best practices, and DevOps processes to maintain high delivery standards.
+                </p>
+
+            </div>
+            <template lwc:if={experienceData}>
+                <lightning-accordion class="accordion">
+                    <template for:each={experienceData} for:item="experience">
+                        <lightning-accordion-section key={experience.id} label={experience.name}>
+                            <h1 class="company"><strong>Company : </strong>{experience.company}</h1>
+                            <h1 class="role"><strong>Role : </strong>{experience.role}</h1>
+                            <h1 class="desc"><strong>Description : </strong></h1>
+                            <p class="desc_text">{experience.description}</p>
+                            <h1 class="response"><strong>Responsibilities : </strong></h1>
+                            <template for:each={experience.responsibilities} for:item="responsibility">
+                                <ul class="response_text" key={responsibility}>
+                                    <li>{responsibility}</li>
+                                </ul>
+                            </template>
+                            <h1 class="tools"><strong>Tools : </strong></h1>
+                            <ul class="tools_list">
+                                 <template for:each={experience.tools} for:item="tool">
+                                    <li key={tool} >{tool}</li>
+                            </template>
+                            </ul>
+                           
+                        </lightning-accordion-section>
+                    </template>
+                </lightning-accordion>                    
+            </template>
+            
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="12" large-device-size="6" medium-device-size="6">
+            <div class="skill_image slds-var-p-around_medium slds-align_absolute-center">
+                <img src={experienceImage} alt="skillSet"/>
+            </div>
+        </lightning-layout-item>
+
+    </lightning-layout>
+    
+</template>

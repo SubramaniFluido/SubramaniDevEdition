@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	
+    <aura:handler name="carSearchFormSubmit" event="c:CarSearchFormSubmitEvent" action="{!c.doFormSubmit}"/>
+    
+    <lightning:card class= "bottom_margin" title="Search Your Car Here">
+        <c:CarSearchForm />
+    </lightning:card>
+    
+    <lightning:card class= "bottom_margin" title="Matching Cars">
+        <c:carSearchResult aura:id= "carSearchResultc" />
+    </lightning:card>
+    
+</aura:component>

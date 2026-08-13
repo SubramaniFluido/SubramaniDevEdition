@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="myText" type="string" default="Hello there!"/>
+    
+    <aura:registerEvent name="appEvent" type="c:appEvent"/>
+    
+    <lightning:card title="Independent Component">
+        <lightning:layout >
+            <lightning:layoutItem padding="around-medium" size="3">
+                <lightning:input type="text" name="input1" label="Enter Value in Independent Component" value="{!v.myText}" />	
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout>
+            <lightning:layoutItem padding="around-medium">
+                <lightning:button variant="brand" label="Pass Value to Component" title="Submit Button" onclick="{! c.handleClick }" />	
+            </lightning:layoutItem>
+        </lightning:layout>
+    </lightning:card>
+</aura:component>

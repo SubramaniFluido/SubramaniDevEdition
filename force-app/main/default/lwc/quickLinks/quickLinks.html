@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 06-07-2025
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <div class="quickLinks">
+        <h1 class="slds-text-align_center">Quick Links</h1>
+    </div>
+    <div class="slds-grid slds-wrap">
+        <template for:each={data} for:item="item">
+            <div class="slds-col image_section slds-align_absolute-center slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-4" key={item.id} onclick={handleClick} data-id={item.id}>
+                <div class="image_container">
+                    <img src={item.image} alt={item.name}/>
+                    <div class="overlay">
+                        <div class="title_class">
+                            {item.name}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

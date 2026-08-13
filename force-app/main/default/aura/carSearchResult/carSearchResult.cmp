@@ -1,0 +1,36 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" extends= "c:Basecmp" controller="carSearchcontroller" access="global">
+	
+ 	<aura:attribute name= "cars" type= "Car__c[]" access= "public"/>
+    <aura:attribute name= "carTypeId" type= "String" access= "Private" default= "" />
+    <aura:attribute name= "carFound" type= "Boolean" access= "Private" default= "false" />
+	
+    <aura:attribute name= "selectedCarId" type= "Id" access= "Public" />
+    
+    <aura:handler name= "init" value= "{!this}" action= "{!c.donInit}" />
+   
+    <aura:handler name="carSelectRegEvent" event="c:carSelectEvent"
+                  action="{!c.carSelectEventAction}"/>
+    
+    <aura:method name="searchCars" action="{!c.doSearch}" description="Get cars from sever based on the carTypeid 
+                                                                       applied to this component" access="public"> 
+    <aura:attribute name="carTypeIdcomp" type="String" default=""/> 
+	</aura:method>
+    
+     <lightning:layout multipleRows= "true" horizontalAlign="centre">
+         <aura:if isTrue= "{!v.carFound}" >
+             <aura:iteration items= "{!v.cars}" var= "car">
+     			<lightning:layoutItem padding="around-small" size= "12" 
+                                      smallDeviceSize="6" 
+                                      mediumDeviceSize="4" 
+                                      largeDeviceSize="3">
+                    <c:CarTile car="{#car}" selected="{! car.Id == v.selectedCarId ? true : false}" />
+                 </lightning:layoutItem>
+             </aura:iteration>
+			<aura:set attribute="else">
+                <div class= "slds-align_absolute-center" >
+                	No Car Found
+                </div>
+    		</aura:set>         
+         </aura:if>
+    </lightning:layout>
+</aura:component>

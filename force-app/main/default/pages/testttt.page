@@ -1,0 +1,28 @@
+<apex:page standardController="account">
+<script>
+        function Show(){
+          alert('Account Name');
+          var myname = document.getElementById('{!$Component.changeDescription.accpageblock.accpagesec.Name}').value;
+          alert("my Name is==>"+ myname );
+          
+        }
+        
+        function demo(){
+          alert('Account Number');
+          var myage = document.getElementById('{!$Component.num}').value;
+           alert('My age is==>'+myage );
+        }
+      </script>
+      <br/>
+      <br/>
+<apex:form id="changeDescription">
+<apex:pageBlock id="accpageblock" >
+<apex:pageBlockSection id="accpagesec" columns="2">
+ <apex:inputfield id="Name" value="{!account.name}" onchange="Show()"/>
+ <apex:inputtext id="num" value="{!account.accountnumber}" onchange="demo()"/>
+ </apex:pageBlockSection>
+ <apex:commandButton value="Save" action="{!save}"/>
+ </apex:pageBlock>
+ </apex:form>
+ <img src="{!$Resource.imagefile}"/>
+ </apex:page>

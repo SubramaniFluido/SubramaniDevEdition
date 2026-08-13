@@ -1,0 +1,37 @@
+<!-- sldsValidatorIgnore -->
+<template>
+        <div class="slds-var-m-around_medium">
+            <h1>I am a child component </h1>
+            <h1>Student and title is the Primitive</h1> <br/>
+            Hello I am {student} <br/>
+            I want to be a {title}
+        </div>
+        <div class="slds-var-m-around_medium">
+            <h1>info is the non Primitive</h1> <br/>
+            <strong>Student Details: </strong> <br/>
+                Name : {detail.name} <br/>
+                City : {detail.city} <br/>
+                Country : {detail.country} <br/>
+        </div>
+
+        <h1>datatable is parent to child using action from parent</h1> <br/>
+        <lightning-card title="Lighting Data Table" icon-name="standard:account">
+            <template if:true={accounts}>
+                <div style="height: 300px;">
+                    <lightning-datatable
+                            key-field="id"
+                            data={accounts}
+                            columns={fields}>
+                    </lightning-datatable>
+                </div>
+            </template>
+        </lightning-card>
+
+        <lightning-card title="Contact Iteration" icon-name="standard:account">
+                <div style="height: 300px;">
+                    <template for:each={contactNames} for:item="contact">
+                        <div key={contact}> {contact} </div>
+                    </template>
+                </div>
+        </lightning-card>
+</template>

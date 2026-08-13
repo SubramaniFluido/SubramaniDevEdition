@@ -1,0 +1,31 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+    <aura:attribute name="studentName" type="String" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="parentsName" type="String" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="highqualification" type="String[]" default="['SSLC, 'HSC', 'UG', 'PG', 'PHD', 'Other']" description="This is the attribute description"/>
+    <aura:attribute name="age" type="Integer" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="email" type="String" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="phone" type="Integer" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="city" type="String" default="This is a default text" description="This is the attribute description"/>
+	<aura:attribute name="paidcourse" type="Boolean" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="heading" type="String" default="This is a default Heading"/>
+    Student's Registration page
+    
+    <lightning:input name="studentName" label="Enter some text" value="{!v.studentName}"/>
+	<lightning:input name="parentsName" label="Enter some text" value="{!v.parentsName}"/>
+    <lightning:select name="highqualification" label="What's your Highest Qualification?" required="true">
+        <option value="{!v.highqualification}">{!v.highqualification}</option>
+    </lightning:select>
+    <lightning:input name="highqualification" label="Enter some text" value="{!v.highqualification}"/>
+    <lightning:input name="age" label="Enter some text" value="{!v.age}"/>
+    <lightning:input name="email" label="Enter some text" value="{!v.email}"/>
+    <lightning:input name="phone" label="Enter some text" value="{!v.phone}"/>
+    <lightning:input name="city" label="Enter some text" value="{!v.city}"/>
+    <lightning:input name="paidcourse" label="Enter some text" value="{!v.paidcourse}"/>
+    <lightning:button variant="brand" label="Submit" title="Submit Student Form" onclick="{! c.handleClick }" />
+                                                                       
+                                                                       
+    
+
+
+</aura:component>

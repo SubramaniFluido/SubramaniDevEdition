@@ -1,0 +1,5 @@
+<apex:page >
+    <p>
+        Accounts is been created successfuly !!
+    </p>
+</apex:page>

@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="parValue" type="string" default="Hello there!"/>
+    
+    <aura:handler name="sampleComponentEvent" event="c:compEvent" action="{!c.handleComponentEvent}"/>
+    
+    <aura:handler event="c:appEvent" action="{!c.handleApplicationEvent}"/>
+    
+    <lightning:card title="Parent Component">
+       <lightning:layout >
+            <lightning:layoutItem padding="around-medium">
+            You entered: <ui:outputText value="{!v.parValue}"/>	
+           </lightning:layoutItem>
+        </lightning:layout>
+         <lightning:layout >
+            <lightning:layoutItem padding="around-medium">
+                <lightning:button variant="brand" label="Call Child Method" onclick="{!c.callAuraMethod}" />
+           </lightning:layoutItem>
+        </lightning:layout>
+    </lightning:card>
+    <c:ChildCmp aura:id="childCmp" parentValue="Hey I am coming from Parent. Give some respect!"/>
+</aura:component>

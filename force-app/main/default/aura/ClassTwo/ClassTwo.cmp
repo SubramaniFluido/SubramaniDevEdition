@@ -1,0 +1,15 @@
+<aura:component controller="LightningInputController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="userInfo" type="user" default="{'sObjectType':'Contact', 'FirstName':'', 
+                                                                           'LastName':'',
+                                                                           'MobilePhone':'',
+                                                                           'Birthdate':'',
+                                                                           'Email':'',}"/>
+    <aura:attribute name="testName" type="String" default="Default Text"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    
+    <h1>This is my name {!v.testName} {!v.userInfo.Email}</h1>
+    
+</aura:component>

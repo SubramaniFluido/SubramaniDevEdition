@@ -1,0 +1,50 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 06-09-2025
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <footer class="footer_container slds-grid slds-wrap slds-var-p-around_medium">
+        <!-- Column 1 -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-3 slds-var-p-around_small footer_column">
+            <div class="footer_image_quote">
+                <img src={apjImage} alt="Footer Image" class="footer_image" />
+                <p class="footer_quote">{motivation}</p>
+            </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-3 slds-var-p-around_small footer_column">
+            <h2 class="footer_header">Contact Me</h2>
+            <p>
+            <a class="clickable" href={mobile} aria-label="Call +1 234 567 8901" target="_blank">Mobile: +358 40 168 2152</a>
+            </p> 
+            <p>
+                <a class="clickable" href={email} aria-label="Send email to subramani.rkumarasamy@gmail.com" target="_blank">Email: subramani.rkumarasamy@gmail.com</a>
+            </p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-3 slds-var-p-around_small footer_column">
+            <h2 class="footer_header">Follow Me</h2>
+            <div class="social_icons">
+                <a href={linkedInUrl} target="_blank" title="LinkedIn">
+                    <img src={linkedinIcon} alt="LinkedIn" />
+                </a>
+                <a href={trailheadUrl} target="_blank" title="Trailhead">
+                    <img src={trailheadIcon} alt="Trailhead" />
+                </a>
+                <a href={whatsappUrl} target="_blank" title="WhatsApp">
+                    <img src={whatsappIcon} alt="WhatsApp" />
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Row -->
+        <div class="slds-text-align_center slds-var-p-vertical_small footer_bottom">
+            <p>Developed by Subramani Kumarasamy. All rights reserved 2025.</p>
+        </div>
+    </footer>
+</template>

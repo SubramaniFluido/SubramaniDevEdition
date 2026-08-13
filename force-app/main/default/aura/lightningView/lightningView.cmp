@@ -1,0 +1,66 @@
+<aura:component controller="LightningInputController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="contactList" type="List" access="public"/>
+    <aura:attribute name="sizeOfList" type="Integer" access="public"/>
+    <aura:attribute name="recordId" type="Id" access="public"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.getContactsList}"/>
+    
+    
+    
+    <aura:handler event="c:LightningInputAppEvent" action="{!c.getContactsList}"/>
+    
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-contact" title="contact">
+                        <span class="slds-assistive-text">contact</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span>Contacts ({!v.sizeOfList})</span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body">
+            <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered slds-table_fixed-layout" role="grid">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Name">Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Company">Phone</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Title">BirthDate</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Email">Email</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.contactList}" var="contact">
+                        <tr class="slds-hint-parent">
+                            <td role="gridcell">
+                                <div class="slds-truncate" title="Company One">{!contact.Name}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate" title="Company One">{!contact.MobilePhone}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate" title="Director of Operations">{!contact.Birthdate}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate" title="adam@company.com">{!contact.Email}</div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</aura:component>

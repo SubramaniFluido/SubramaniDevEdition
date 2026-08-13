@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Lifecycle Hook">
+        <div>This is Parent Component</div>
+        <lightning-input type="text" label="Random" value={input} onkeyup={changeHandler}></lightning-input><br/>
+        <lightning-button variant="brand" label="Show Child Component" onclick={clickHandler}></lightning-button>
+        <template if:true={showChild}>
+            <c-l-w-c-life-cycle-child></c-l-w-c-life-cycle-child>
+        </template>
+    </lightning-card>
+</template>

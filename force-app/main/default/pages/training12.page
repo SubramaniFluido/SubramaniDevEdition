@@ -1,0 +1,12 @@
+<apex:page controller="showsuccesscontroller" lightningStylesheets="true">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageMessages />
+        <apex:pageBlockSection >
+        <apex:inputText value="{!accName}" label="Name"/>
+        <apex:inputText value="{!accPhone}" label="Phone" />
+        <apex:commandButton value="Save" action="{!insertacc}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

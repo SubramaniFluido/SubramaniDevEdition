@@ -1,0 +1,35 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.right-column p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.success-message {
+    color: green;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.error-message {
+    color: #d9534f;
+    margin-top: 1rem;
+    font-weight: 600;
+}

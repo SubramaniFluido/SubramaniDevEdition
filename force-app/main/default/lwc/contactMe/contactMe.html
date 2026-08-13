@@ -1,0 +1,80 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 06-09-2025
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-layout horizontal-align="center" class="container" pull-to-boundary="small" vertical-align="start" multiple-rows>
+        <!-- Left Column: Image -->
+        <lightning-layout-item flexibility="auto" padding="around-small" class="left-column" size="12" medium-size="5" large-size="4">
+            <img src={contactImageUrl} alt="Contact Me" class="center-image" />
+        </lightning-layout-item>
+
+        <!-- Right Column: Form -->
+        <lightning-layout-item flexibility="auto" padding="around-small" class="right-column" size="12" medium-size="7" large-size="8">
+            <p>
+                Interested in transforming your Salesforce platform? Let's connect.
+                I am open to collaborations and consulting across domains.
+                Whether you need technical leadership, architecture support, or integration guidance,
+                I am here to support your business with high-value solutions.
+                Submit your request and I will get in touch promptly.
+            </p>
+
+            <form onsubmit={handleSubmit}>
+                <lightning-layout multiple-rows>
+                    <lightning-layout-item size="12" medium-size="6" padding="around-small">
+                        <lightning-input label="Name" name="name" value={formData.name} onchange={handleChange} required></lightning-input>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="12" medium-size="6" padding="around-small">
+                        <lightning-input type="email" label="Email" name="email" value={formData.email} onchange={handleChange} required></lightning-input>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="12" medium-size="6" padding="around-small">
+                        <lightning-input type="tel" label="Mobile" name="mobile" value={formData.mobile} onchange={handleChange} required></lightning-input>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="12" medium-size="6" padding="around-small">
+                        <lightning-input label="Company" name="company" value={formData.company} onchange={handleChange}></lightning-input>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="12" medium-size="6" padding="around-small">
+                        <lightning-input label="Country" name="country" value={formData.country} onchange={handleChange}></lightning-input>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="12" padding="around-small">
+                        <lightning-textarea label="Requirement" name="requirement" value={formData.requirement} onchange={handleChange} required></lightning-textarea>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="12" medium-size="6" padding="around-small">
+                        <lightning-combobox
+                            label="Urgency"
+                            name="urgency"
+                            options={urgencyOptions}
+                            value={formData.urgency}
+                            onchange={handleChange}
+                            required>
+                        </lightning-combobox>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="12" medium-size="6" padding="around-small">
+                        <lightning-input type="number" label="Budget" name="budget" value={formData.budget} onchange={handleChange}></lightning-input>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="12" padding="around-small">
+                        <lightning-button type="submit" label="Submit" variant="brand"></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </form>
+
+            <template if:true={submitSuccess}>
+                <p class="success-message">Thank you for contacting us. We will get back to you soon.</p>
+            </template>
+            <template if:true={submitError}>
+                <p class="error-message">An error occurred. Please try again later.</p>
+            </template>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

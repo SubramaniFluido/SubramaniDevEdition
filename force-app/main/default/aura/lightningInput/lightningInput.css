@@ -1,0 +1,9 @@
+.THIS.parent {
+    color:blue
+}
+.THIS.parent1 {
+    color:red
+}
+.THIS .child1 {
+    color:blue
+}

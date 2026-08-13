@@ -1,0 +1,33 @@
+.skill_image img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    height: auto;
+    width: 80%;
+}
+
+.header {
+    font-size: 30px;
+    color: hsl(0, 0%, 0%);
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-decoration-color: brown;
+    text-underline-offset: 7px;
+    font-family: sans-serif;
+    word-spacing: 2px;
+}
+
+.para_text {
+    font-family: sans-serif;
+    font-size: 18px;
+    word-spacing: 2px;
+    font-weight: 30px;
+}
+
+.skills {
+    font-family: monospace;
+    font-size: 15px;
+    word-spacing: 2px;
+    font-weight: 400;
+}

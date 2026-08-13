@@ -1,0 +1,56 @@
+<aura:component controller="DevelopmentBatchController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="studentName" type="String" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="parentsName" type="String" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="highqualification" type="String[]" default="SSLC, HSC, UG, PG, PHD, Other" description="This is the attribute description"/>
+    <aura:attribute name="age" type="Integer" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="email" type="String" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="phone" type="Integer" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="city" type="String" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="paidcourse" type="Boolean" default="This is a default text" description="This is the attribute description"/>
+    <aura:attribute name="heading" type="String" default="This is a default Heading"/>
+    Student's Registration page
+    
+    <lightning:card > 
+        <lightning:layout class="slds-grid slds-wrap">
+            <lightning:layoutItem padding="around-small" class="slds-col slds-size_1-of-2">
+                <lightning:input  type="text" name="studentName" label="Enter Student Name" value="{!v.studentName}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" class="slds-col slds-size_1-of-2">
+                <lightning:input type="text" name="parentsName" label="Enter Guardian Name" value="{!v.parentsName}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" class="slds-col slds-size_1-of-2">
+                <lightning:select name="highqualification" label="What's your Highest Qualification?" required="true">
+                    <aura:iteration items="{!v.highqualification}" var="hq">
+                        <option value="{!hq}" text="{!hq}"></option>
+                    </aura:iteration>
+                </lightning:select>
+            </lightning:layoutItem>
+            <lightning:layoutItem aura:id="age" padding="around-small" class="slds-col slds-size_1-of-2">
+                <lightning:input type="number" name="age" label="Age" value="{!v.age}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" class="slds-col slds-size_1-of-2">
+                <lightning:input type="email" name="email" label="Enter some text" value="{!v.email}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" class="slds-col slds-size_1-of-2">
+                <lightning:input type="tel" name="tel" label="Phone" value="{!v.phone}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" class="slds-col slds-size_1-of-2">
+                <lightning:input type="text" name="city" label="City" value="{!v.city}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" class="slds-col slds-size_1-of-2">
+                <lightning:input aura:id="paid" type="checkbox" label="Do you paid to join Paid Course" name="paidcourse"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout>
+        </lightning:layout>
+        <lightning:layout class="slds-grid slds-wrap">
+            <lightning:layoutItem padding="around-small" class="slds-col slds-size_1-of-2">
+                <lightning:button variant="brand" label="Submit" title="Submit Student Form" onclick="{! c.handleClick }" />
+            </lightning:layoutItem>
+        </lightning:layout>
+    </lightning:card>                                                               
+    
+    
+    
+</aura:component>

@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Child to Parent Communication With Parametres">
+        <div class = "slds-var-m-around_medium">
+            <lightning-progress-bar
+                value = {progressValue}
+                size = "Large">
+            </lightning-progress-bar>
+            <c-c2p-custom-event-parameter-child
+                onsetprogress = {progressHandle}>
+            </c-c2p-custom-event-parameter-child>
+        </div>
+    </lightning-card>
+</template>

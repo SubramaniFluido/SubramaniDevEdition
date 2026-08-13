@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<aura:attribute name="width" type="String" default= "100%" access= "public" />
+    <aura:attribute name="height" type="String" default= "200px" access= "public" />
+   	<aura:attribute name="location" type="Sobject" />
+    <aura:attribute name="jsLoaded" type="Boolean" default= "false" access= "public" />
+    
+    <aura:handler event="c:carSelectedApplicationEvent" action="{!c.onLoadMap}" />
+    
+    <ltng:require 
+        styles="{!$Resource.leaflet + '/leaflet.css'}"
+        scripts="{!$Resource.leaflet + '/leaflet-src.js'}"
+        afterScriptsLoaded="{!c.jsLoaded}" />
+    
+    <aura:if isTrue="{! !empty(v.location)}">
+        <lightning:card title="Current Car Location">
+        </lightning:card>
+    
+    
+  	</aura:if>
+    
+</aura:component>

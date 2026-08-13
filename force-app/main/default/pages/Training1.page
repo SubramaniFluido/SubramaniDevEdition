@@ -1,0 +1,17 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page: Training1
+  <!-- End Default Content REMOVE THIS -->
+  
+  <br> </br>
+
+<h1> Hello World </h1>
+{!$User.FirstName}
+{!$User.LastName}
+{!$User.Username}
+
+
+
+
+</apex:page>

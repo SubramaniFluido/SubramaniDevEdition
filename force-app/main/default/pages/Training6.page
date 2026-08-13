@@ -1,0 +1,4 @@
+<apex:page >
+
+<apex:detail relatedList="false"/>
+  </apex:page>

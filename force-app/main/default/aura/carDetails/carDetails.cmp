@@ -1,0 +1,42 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:lightningQuickAction" access="global" >
+    <aura:attribute name="recordError" type="String" access= "private" />
+    <aura:attribute name="carId" type="Id" access= "public" />
+	<aura:attribute name="car" type="Car__c" access="Public"/>
+    <aura:attribute name="tabId" type="Id" access= "private" />
+    
+    <aura:handler event="c:carSelectedApplicationEvent" action="{!c.onCarSelected}" />
+    <aura:handler event="c:carExperienceEvent" name= "carExpAddedEvent" action="{!c.onCarExpAdded}" />
+    
+    <force:recordData aura:id="service"
+		recordId= "{!v.carId}"
+        mode= "VIEW"
+		targetError= "{!v.recordError}"
+    	fields= "Id, Car_Type__r.Name, Build_Year__c, Per_Day_Rent__c, Mileage__c, Name, Picture__c, Contact__r.Name" 
+    	targetFields= "{!v.car}" />
+    
+    <lightning:layout multipleRows= "true">
+        <lightning:layoutItem size="12"
+                              smallDeviceSize="12" 
+                              mediumDeviceSize="12" 
+                              largeDeviceSize="12">
+            <aura:if isTrue="{! !empty(v.car)}">
+                <lightning:tabset aura:id= "tabs" selectedTabId="{!v.tabId}">
+        			<lightning:tab label="Details" id= "carDetailTab">
+                        <c:carDetail car= "{!v.car}" />
+                    </lightning:tab>
+                    <lightning:tab label="Experience" id= "expTab">
+                        <c:carExperience aura:id= "expTabId" car= "{!v.car}" />
+                    </lightning:tab>
+                    <lightning:tab label="Add New Experience" id= "addExpTab">
+                        <c:carAddExperience car= "{!v.car}" />
+                    </lightning:tab>
+                </lightning:tabset>
+                <aura:set attribute="else">
+                          {!v.car}           
+                </aura:set>
+ 			 </aura:if> 
+        </lightning:layoutItem>
+    </lightning:layout>
+
+
+</aura:component>

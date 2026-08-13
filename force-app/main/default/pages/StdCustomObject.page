@@ -1,0 +1,12 @@
+<apex:page standardController="Candidate__c">
+    
+    <apex:pageBlock title="Account Summary">
+        <apex:pageBlockSection >
+            
+            Name: {! Candidate__c.Owner.Name } <br/>
+            
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+</apex:page>

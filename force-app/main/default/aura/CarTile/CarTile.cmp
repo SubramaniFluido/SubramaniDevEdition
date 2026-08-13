@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="car" type="Object" access="Public" />
+    <aura:attribute name="selected" type="Boolean" default= "false" access="Public" />
+    
+    <aura:registerEvent name="carSelectRegEvent" type="c:carSelectEvent"/>
+
+    
+    <lightning:button variant="neutral" class= "{!v.selected ? 'selected tile' : 'tile'}"
+                       onclick="{!c.onCarClick}">
+    <div class="imageview" style="{!'background-image:url(\'' + v.car.Picture__c + '\')'}" >
+    	<div class= "lower-third">           
+            <h1 class= "slds-truncate"> {!v.car.Contact__r.Name} </h1>           
+        </div>
+    </div>
+    </lightning:button>  
+</aura:component>

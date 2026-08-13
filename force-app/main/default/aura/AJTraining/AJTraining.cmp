@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<div class="parent">
+    <h1> Hello people </h1>
+    
+    </div>
+    <aura:attribute name="myText" type="string" default=""/>
+    
+    
+    
+	<ui:inputText label="Enter some text" class="field" value="{!v.myText}" updateOn="click"/>
+    
+	You entered: <ui:outputText value="{!v.myText}"/>	
+</aura:component>

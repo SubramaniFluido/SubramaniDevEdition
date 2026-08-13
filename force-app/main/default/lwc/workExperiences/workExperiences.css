@@ -1,0 +1,65 @@
+.skill_image img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    height: auto;
+    width: 80%;
+}
+
+.header {
+    font-size: 30px;
+    color: hsl(0, 0%, 0%);
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-decoration-color: brown;
+    text-underline-offset: 7px;
+    font-family: sans-serif;
+    word-spacing: 2px;
+}
+
+.project {
+    font-family: sans-serif;
+    font-size: 25px;
+    word-spacing: 2px;
+    font-weight: bolder;
+}
+
+.para_text {
+    font-family: sans-serif;
+    font-size: 17px;
+    word-spacing: 2px;
+    font-weight: 30px;
+}
+
+.accordion {
+    --slds-c-accordion-heading-text-color-hover: hsl(142, 83%, 5%);
+    --slds-c-accordion-section-color-border: hsl(0, 77%, 42%);
+    --slds-c-accordion-summary-color-background: #ffffff;
+    --slds-c-accordion-heading-font-size: 20px;
+}
+
+.company, .role, .desc, .response, .tools, .desc_text {
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.response_text {
+    list-style-type: square;
+    list-style-position: inside;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.tools_list {
+    font-family: sans-serif;
+    font-size: 15px;
+    word-spacing: 2px;
+    font-weight: 20px;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style-position: inside;
+    padding: 0;
+    list-style-type: square;
+}

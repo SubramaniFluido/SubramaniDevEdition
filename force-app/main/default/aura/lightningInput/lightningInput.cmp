@@ -1,0 +1,38 @@
+<aura:component controller="LightningInputController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="name" type="String" access="public"/>
+    <aura:attribute name="userInfo" type="user"/> 
+    <aura:attribute name="test" type="String"/> 
+    <aura:attribute name="contact" type="Contact" access="public" default="{'sObjectType':'Contact', 'FirstName':'', 
+                                                                           'LastName':'',
+                                                                           'MobilePhone':'',
+                                                                           'Birthdate':'',
+                                                                           'Email':'',}" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:registerEvent name="appEvent" type="c:LightningInputAppEvent"/>
+    
+    {!v.test}
+    <lightning:card title="{!'Hey'+' '+v.userInfo.Name+','+' '+'Welcome to First Lightning Class'}">
+        <lightning:layout class="slds-wrap">
+            <lightning:layoutItem class="slds-col slds-size_1-of-2" padding="around-small">
+                 <lightning:input name="firstName" label="First Name" required="true" value="{!v.contact.FirstName}" />
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-col slds-size_1-of-2" padding="around-small">
+                 <lightning:input aura:id="lastName" label="Last Name" required="true" value="{!v.contact.LastName}" />
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-col slds-size_1-of-2" padding="around-small">
+                <lightning:input type="tel" label="Phone" value="{!v.contact.MobilePhone}" name="phone"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-col slds-size_1-of-2" padding="around-small">
+                <lightning:input type="date" name="date" label="BirthDate" value="{!v.contact.Birthdate}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-col slds-size_1-of-1" padding="around-small">
+            	<lightning:input type="email" name="email" value="{!v.contact.Email}" label="Email" placeholder="youraddress@airtel.com"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-col slds-size_1-of-1" padding="around-small">
+            	<lightning:button label="Create Contact" class="slds-m-top--medium" variant="brand" onclick="{!c.clickCreate}"/>
+            </lightning:layoutItem>
+        </lightning:layout> 
+    </lightning:card>
+</aura:component>

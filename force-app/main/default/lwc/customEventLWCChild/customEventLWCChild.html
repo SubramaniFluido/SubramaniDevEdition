@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Controls" icon-name="action:upload">
+        <lightning-button
+            label="Subtract"
+            icon-name="utility:dash"
+            onclick={handleSubtract}>
+        </lightning-button>
+        <lightning-button
+            label="Add"
+            icon-name="utility:add"
+            onclick={handleAdd}>
+        </lightning-button>
+    </lightning-card>
+
+    <lightning-card title="Child Custom Paramter Event">
+        <lightning-input label="Share Progress" type="number" value={progress} onchange={handleChange}></lightning-input>
+        <lightning-button label="Click Me" onclick={handleClick}></lightning-button>
+    </lightning-card>
+</template>

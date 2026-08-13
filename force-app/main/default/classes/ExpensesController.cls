@@ -1,0 +1,18 @@
+public with sharing class ExpensesController {
+    @AuraEnabled
+    public static List<Expense__c> getExpenses() {
+        // Perform isAccessible() checking first, then
+        return [SELECT Id, Name, Amount__c, Client__c, Date__c, 
+                       Reimbursed__c, CreatedDate 
+                FROM Expense__c];
+    }
+    
+    @AuraEnabled
+    public static Expense__c saveExpense(Expense__c expense) {
+        system.debug('expense controller param'+expense);
+        // Perform isUpdateable() checking first, then
+        upsert expense;
+        system.debug('after upsert epense'+expense);
+        return expense;
+    }
+}

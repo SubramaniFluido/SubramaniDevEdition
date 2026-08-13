@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 06-09-2025
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+
+    <div class="header_text slds-align_absolute-center">Certifications</div>
+
+    <lightning-layout class="slds-var-p-top_large slds-grid slds-wrap" multiple-rows>
+        <template lwc:if={certificationData}>
+            <template for:each={certificationData} for:item="certification">
+                <lightning-layout-item key={certification.id} padding="around-small" size="12" large-device-size="3" medium-device-size="3">
+                    <img src={certification.image} alt={certification.name} class="certification-image"/>
+                </lightning-layout-item>
+            </template>
+        </template>
+        
+    </lightning-layout>
+</template>

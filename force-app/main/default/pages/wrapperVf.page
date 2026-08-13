@@ -1,0 +1,16 @@
+<apex:page controller="WrapperClassContrl" tabStyle="Account">
+<apex:form >
+    <apex:pageBlock title="Wrapper Class">
+        <apex:pageBlockSection title="Page Block Section">
+            
+            <apex:pageBlockTable value="{!listWrapper}" var="a">
+                <apex:column >
+                    <apex:inputCheckbox value="{!a.checkBool}"/>
+                </apex:column>
+                <apex:column value="{!a.acct.Name}"/>
+                <apex:column value="{!a.acct.Industry}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

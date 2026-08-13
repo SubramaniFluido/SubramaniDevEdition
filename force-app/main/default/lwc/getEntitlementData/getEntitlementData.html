@@ -1,0 +1,31 @@
+<!--
+  @description       :
+  @author            : Subramani Kumarasamy
+  @group             :
+  @last modified on  : 10-18-2024
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="Customer Entitlements">
+        <!-- Show loading spinner while fetching data -->
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+
+        <!-- Display entitlement data -->
+        <template if:true={entitlements.length}>
+            <template for:each={entitlements} for:item="entitlement">
+                <p key={entitlement.productId} class="slds-var-p-around_small">
+                    <strong>Product:</strong> {entitlement.productName} <br>
+                    <strong>Start Date:</strong> {entitlement.startDate} <br>
+                    <strong>End Date:</strong> {entitlement.endDate}
+                </p>
+            </template>
+        </template>
+
+        <!-- Display error message if any -->
+        <template if:true={error}>
+            <div class="slds-text-color_error slds-var-p-around_small">{error}</div>
+        </template>
+    </lightning-card>
+</template>

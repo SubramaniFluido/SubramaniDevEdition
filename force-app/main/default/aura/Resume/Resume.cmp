@@ -1,0 +1,30 @@
+<aura:component controller="GetAllAccounts" implements="forceCommunity:layout,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="showFullResume" type="Boolean" default="False"/>
+    <Lightning:card class="introText" title="Subramani Kumarasamy Salesforce Certified Professional">
+        <p>Thank you very much for visting my profile. Please click on the below button to see more details.</p>
+        <br/>
+        <lightning:button variant="success" label="Show Resume" title="Success" onclick="{! c.handleClick }"/>
+    </Lightning:card>
+    
+    <aura:if isTrue="{!v.showFullResume}">
+        <Lightning:card title="Subramani Kumarasamy">
+            <lightning:layout title="Contact Information">
+                <lightning:layoutItem padding="around-small">
+                    <lightning:formattedText value="Mobile: +91-739-7302050" />
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small">
+                    <lightning:formattedText linkify="true" value="Email: subramaniofficialmail@gmail.com" />
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small">
+                    <lightning:formattedText linkify="true" value="LinkedIn: subramaniofficialmail@gmail.com" />
+                </lightning:layoutItem>
+            </lightning:layout>
+        </Lightning:card>
+        
+        <aura:set attribute="else">
+            <p class="textInfo">Please click on Show Full Resume Button to access more information</p>
+        </aura:set>
+    </aura:if>
+    
+</aura:component>

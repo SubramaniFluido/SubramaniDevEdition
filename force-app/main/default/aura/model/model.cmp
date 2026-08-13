@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <lightning:button label="Open Modal" onclick="{!c.openModal}" />
+    
+    <div role="dialog" tabindex="-1" aura:id="myModal" aria-labelledby="header43" class="slds-modal ">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <h2 id="header43" class="slds-text-heading--medium">CONFIRM</h2>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium">
+                <center><h2>Are you sure you want to delete this?</h2></center>
+            </div>
+            <div class="slds-modal__footer">
+                <lightning:button label="Cancel" onclick="{!c.closeModal}"/>
+                <lightning:button variant="brand" label="Delete" />
+            </div>
+        </div>
+    </div>
+    <div class="slds-backdrop" aura:id="myModal-Back"></div>
+</aura:component>

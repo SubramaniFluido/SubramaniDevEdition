@@ -1,0 +1,19 @@
+<aura:component controller="opportunityRelatedList" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="oppor" type="Opportunity[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <ul class="list-group">
+        <aura:iteration items="{!v.opp}" var="op">
+            <li class="list-group-item">
+                <a href="{! '/' + op.Id }">
+<b>                    <p>{!op.Name}</p>             
+    
+                    <p>{!op.StageName}</p>      
+    
+                    <p>{!op.Amount}</p>   
+    
+</b>                </a>
+            </li>
+        </aura:iteration>
+    </ul>
+</aura:component>

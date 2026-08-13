@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>This is my docoumentation</aura:description>
+	<aura:example name="OnlineTrainingComponent" ref="c:OnlineTrainingDev" label="Label">
+		Example Description
+	</aura:example>
+</aura:documentation>

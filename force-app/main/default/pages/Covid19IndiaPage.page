@@ -1,0 +1,13 @@
+<apex:page showHeader="false" sidebar="false">
+    <apex:includeLightning />
+    <apex:slds />
+    <div id="CovidLightning" />
+    <script>
+    $Lightning.use("c:Covid19IndiaApp", function(){
+        $Lightning.createComponent("c:Covid19India",
+                                   {},
+                                   "CovidLightning",
+                                   function(cmp){});
+    });
+    </script>
+</apex:page>

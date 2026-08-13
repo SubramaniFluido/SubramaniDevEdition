@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<lightning:card iconName="action:search" title="Search">
+    <div onkeyup="{! c.handleKeyUp }">
+        <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            label="Search when user hits the 'enter' key"
+            type="search"
+        />
+    </div>
+    </lightning:card>
+    <article class="slds-card">
+    </article>
+</aura:component>

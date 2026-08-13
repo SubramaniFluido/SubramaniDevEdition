@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Parent to Child Communication">
+        <h1>I am a Parent Component</h1> <br/>
+        <lightning-input label="Search Account Name" type="search" value={searchKey} onkeyup={searchHandler}></lightning-input>
+        <strong>Add Contact</strong> <br/>
+        <lightning-input label="Contact Name" type="text" value={name} onchange={changeHandler}></lightning-input>
+        <lightning-button label="Add Contact" variant="brand" onclick={addContactToChild}></lightning-button>
+        <c-p2c-primitive-child student={student} title={title} detail={info} accounts={data} fields={columns}></c-p2c-primitive-child>
+    </lightning-card>
+
+</template>

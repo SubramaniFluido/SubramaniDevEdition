@@ -1,0 +1,2 @@
+<apex:page standardController="Case" recordSetVar="cases"
+           extensions="CaseAcceptOwnershipExtension" action="{!updateCases}"></apex:page>

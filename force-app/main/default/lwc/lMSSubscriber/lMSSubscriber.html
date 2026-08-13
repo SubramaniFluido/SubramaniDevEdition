@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="LMS Subscriber Component">
+        <div>
+            <lightning-button variant="success" label="Subscribe" title="Subscribe" onclick={subscribeMsg} class="slds-var-m-left_x-small"></lightning-button>
+            <lightning-button variant="destructive-text" label="Unsubscribe" title="Unsubscribe" onclick={unsubscribeMsg} class="slds-var-m-left_x-small"></lightning-button>
+            <br/>
+            <br/>
+            <p>Received message:</p>
+            {payload}
+        </div>
+    </lightning-card>
+</template>

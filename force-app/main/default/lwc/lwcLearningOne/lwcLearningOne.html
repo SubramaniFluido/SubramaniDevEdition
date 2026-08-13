@@ -1,0 +1,94 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Dynamic Input">
+        <div class="slds-m-around_medium">
+            <div>
+                <lightning-input type="text" label="Enter some text" onchange={handleDynamicInput}></lightning-input>
+            </div>
+
+            <div>
+            The value of the input field is: {textValue}
+            </div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Track Property">
+        <div class="slds-m-around_medium">
+            <div>
+                <lightning-input type="text" label="Enter some text" onchange={handleTrackInput}></lightning-input>
+            </div>
+
+            <div>
+            The value of the input field is: {contact.name} {contact.email} {contact.title}
+            </div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Array">
+        <div class="slds-m-around_medium">
+        <div>
+            <lightning-input type="text" label="Enter some text" onchange={handleArrayInput}></lightning-input>
+        </div>
+
+        <div>
+           The value of the input field is: {user} and first value is {firstValue}
+        </div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Conditional Rendering">
+        <div class="slds-m-around_medium">
+       <template if:true={showContent}> Hi I am visible because showcontent is true</template>
+       <template if:false={showContent}> Hi I am visible because showcontent is true</template>
+       </div>
+    </lightning-card>
+
+    <lightning-card title="Conditional Rendering">
+        <div class="slds-m-around_medium">
+        <!-- Brand variant: Identifies the primary action in a group of buttons -->
+        <lightning-button variant="brand" label="Brand" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        <template if:true={showContent}> Hi I am visible because showcontent is true by button click</template>
+       </div>
+    </lightning-card>
+
+    <lightning-card title="Iteration">
+        <div class="slds-m-around_medium">
+            <h1>Hello I am the heading styling from JS</h1>
+            <template for:each={contacts} for:item="contact">
+                <li key={contact.id}>
+                    {contact.name}, {contact.title}
+                </li>
+            </template>
+            <template for:each={fruits} for:item="fruit">
+                    <li key={fruit} class="fruit">
+                        {fruit}
+                    </li>
+            </template>
+        </br>
+            <lightning-button label="Click Me" onclick={handleClick}></lightning-button>
+       </div>
+    </lightning-card>
+
+    <lightning-card title="Lightning Record Form" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+                mode="view"
+                fields={fields}
+                onsuccess={showSuccessMessage}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Lighting Data Table" icon-name="standard:account">
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="id"
+                    data={accounts.data}
+                    columns={columns}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+    
+</template>
