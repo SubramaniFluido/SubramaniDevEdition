@@ -22,6 +22,8 @@ public class AccountsBatch  implements Database.Batchable<SObject>, Database.sta
     public void finish(Database.BatchableContext bc){
         system.debug('finish method executed. Batch done. Simple.');
         system.debug('Number of Record Updated '+count);
+        AsyncApexJob job = [SELECT Id, Status FROM AsyncApexJob WHERE Id = :bc.getJobId()];
+        System.debug('Job Status: ' + job.Status);
     }
 
 }
