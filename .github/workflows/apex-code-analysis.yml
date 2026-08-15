@@ -1,0 +1,36 @@
+name: Apex Code Analysis
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'force-app/**/*.cls'
+      - 'force-app/**/*.trigger'
+
+jobs:
+  code-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Salesforce CLI
+        run: npm install -g @salesforce/cli
+
+      - name: Install Code Analyzer plugin
+        run: sf plugins install @salesforce/sfdx-scanner
+
+      - name: Run Code Analyzer
+        run: |
+          sf scanner run \
+            --target "force-app/main/default/classes,force-app/main/default/triggers" \
+            --category "Best Practices,Security,Design,Error Prone,Performance" \
+            --severity-threshold 2 \
+            --format sarif \
+            --outfile results.sarif
+
+      - name: Upload SARIF results
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results.sarif
