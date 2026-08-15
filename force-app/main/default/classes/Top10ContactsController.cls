@@ -5,7 +5,7 @@ public with sharing class Top10ContactsController {
             SELECT Id, FirstName, LastName, Email, Phone, AccountId, Account.Name
             FROM Contact
             ORDER BY CreatedDate DESC
-            LIMIT 10
+            LIMIT 20
         ];
     }
 }
