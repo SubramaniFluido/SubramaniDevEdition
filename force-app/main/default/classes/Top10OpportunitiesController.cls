@@ -6,7 +6,7 @@ public with sharing class Top10OpportunitiesController {
             FROM Opportunity
             WHERE Amount != NULL
             ORDER BY Amount DESC
-            LIMIT 10
+            LIMIT 20
         ];
     }
 }
