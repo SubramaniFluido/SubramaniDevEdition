@@ -5,7 +5,7 @@ public with sharing class Top10AccountsController {
             SELECT Id, Name, Industry, AnnualRevenue, Phone
             FROM Account
             ORDER BY AnnualRevenue DESC NULLS LAST
-            LIMIT 25
+            LIMIT 35
         ];
     }
 }
